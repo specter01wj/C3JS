@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../lib/c3.css">
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="../lib/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../lib/c3.js"></script>
+    <script>
+      
+      var chart = c3.generate({
+          bindto: '#chart',
+          data: {
+              columns: [
+                  ['sample', 30, 200, 100, 400, 150, 250]
+              ]
+          }
+      });
+
+      setTimeout(function () {
+          chart.xgrids([{value: 1, text:'Label 1'}, {value: 4, text: 'Label 4'}]);
+      }, 5000);
+
+      setTimeout(function () {
+          chart.xgrids([{value: 2, text:'Label 2'}]);
+      }, 10000);
+
+      setTimeout(function () {
+          chart.xgrids.add([{value: 3, text:'Label 3', class:'hoge'}]);
+      }, 15000);
+
+      setTimeout(function () {
+          chart.xgrids.remove({value:2});
+      }, 20000);
+
+      setTimeout(function () {
+          chart.xgrids.remove({class:'hoge'});
+      }, 25000);
+
+      setTimeout(function () {
+          chart.xgrids([{value: 1, text:'Label 1'}, {value: 4, text: 'Label 4'}]);
+      }, 30000);
+
+      setTimeout(function () {
+          chart.xgrids.remove();
+      }, 35000);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../lib/c3.css">
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="../lib/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../lib/c3.js"></script>
+    <script>
+      
+      var chart = c3.generate({
+          data: {
+              columns: [
+                  ['sample', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 150, 250, 200, 100, 400, 150, 250]
+              ]
+          },
+          axis: {
+              x: {
+                  type: 'category',
+                  tick: {
+                      culling: {
+                          max: 4 // the number of tick texts will be adjusted to less than this value
+                      }
+                      // for normal axis, default on
+                      // for category axis, default off
+                  }
+              }
+          }
+      });
+
+    </script>
+  </body>
+</html>

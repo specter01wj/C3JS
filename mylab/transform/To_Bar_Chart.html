@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../lib/c3.css">
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="../lib/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../lib/c3.js"></script>
+    <script>
+      
+      var chart = c3.generate({
+          data: {
+              columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 130, 100, 140, 200, 150, 50]
+              ],
+              type: 'line'
+          }
+      });
+
+      setTimeout(function () {
+          chart.transform('bar', 'data1');
+      }, 5000);
+
+      setTimeout(function () {
+          chart.transform('bar', 'data2');
+      }, 10000);
+
+      setTimeout(function () {
+          chart.transform('line');
+      }, 15000);
+
+      setTimeout(function () {
+          chart.transform('bar');
+      }, 20000);
+
+    </script>
+  </body>
+</html>

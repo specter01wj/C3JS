@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../lib/c3.css">
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../lib/c3.js"></script>
+    <script>
+      
+      var chart = c3.generate({
+          data: {
+              columns: [
+                  ['AT_RISK_CONTAINERS', 30, 200, 100, 400, 150, 250],
+                  ['AT_RISK_PERC', 50, 20, 10, 40, 15, 25]
+              ],
+              keys: {
+                  value: ['AT_RISK_CONTAINERS', 'AT_RISK_PERC']
+              },
+              colors: {
+                  AT_RISK_CONTAINERS: 'rgba(102, 153, 204, 1)',
+                  AT_RISK_PERC: 'rgba(15, 149, 15, 1)'
+              },
+              names: {
+                  AT_RISK_CONTAINERS: '# At Risk Containers',
+                  AT_RISK_PERC: 'At Risk  %'
+              },
+              type: 'bar',
+              types: {
+                  AT_RISK_PERC: 'scatter'
+              },
+              axes: {
+                  AT_RISK_CONTAINERS: 'y',
+                  AT_RISK_PERC: 'y2'
+              }
+          },
+          axis: {
+              rotated: true,
+              x: {
+                  type: 'category',
+                  tick: {
+                      values: ['']
+                  },
+                  label: {
+                      format: function (d) {
+                      }
+                  }
+              },
+              y: {
+                  tick: {
+                      count: 2
+
+                  },
+                  label: {
+                      text: '# of At Risk Containers',
+                      position: 'outer-center'
+                  },
+                  min: 0,
+                  padding: 0
+              },
+              y2: {
+                  show: true,
+                  tick: {
+                      count: 2
+                  },
+                  label: {
+                      text: '% At Risk',
+                      position: 'outer-center'
+                  },
+                  padding: {
+                      top: 0,
+                      bottom: 0
+                  }
+              }
+          }
+      });
+
+    </script>
+  </body>
+</html>
